@@ -13,10 +13,8 @@ url4="&showViewpoints=0&sortBy=byRankDescending"
 for x in range(1, 30):
 	url.append(url2 + str(x) + url3 + str(x) + url4)
 for u in url:
-	html.append(urlopen(u).read())
-	for h in html:
-		soup.append(BeautifulSoup(h))
-		for s in soup:
-			info.append(s.findAll('div',{"class":"reviewText"})) 
-			for i in info:
-				obs.append(i.text)
+	html=urlopen(u).read())
+	soup=BeautifulSoup(html))
+	reviews=soup.findAll('div',{"class":"reviewText"})) 
+	for rev in reviews:
+		obs.append(rev.text)
